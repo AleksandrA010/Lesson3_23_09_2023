@@ -60,7 +60,7 @@ namespace Tasks
                         {
                             Console.WriteLine($"Последовательность — не возрастающая, счёт остановился на {last_el} — это {last_el_index} элемент в последовательности.");
                         }
-                            break;
+                        break;
                     case "2":
                         Console.Write("\nВведите порядковый номер карты (число от 6 до 14): ");
                         int number_card;
@@ -147,6 +147,17 @@ namespace Tasks
                         Console.WriteLine($"Это {(Days_Week)day_w}.");
                         break;
                     case "5":
+                        string[] string_array = { "Erdsd", "Hello Kitty", "1231", "Barbie doll", "Barbie doll", "Dima" };
+                        Console.WriteLine($"\nМассив строк — {string.Join(", ", string_array)}.");
+                        int result2 = 0;
+                        foreach (string item in string_array)
+                        {
+                            if (item == "Hello Kitty" | item == "Barbie doll")
+                            {
+                                result2++;
+                            }
+                        }
+                        Console.WriteLine($"Количество строк Barbie doll и Hello Kitty в массиве = {result2}.");
                         break;
                     case "break":
                         flag = false;
