@@ -18,8 +18,12 @@ namespace Tasks
         static void Main(string[] args)
         {
             Console.WriteLine("Доступные для проверки задания (1,2,3,4,5), для проверки введите его номер.\n");
-            Console.WriteLine("Для выхода из программы введите break.\n");
-            Console.WriteLine("Задание 1.\n");
+            Console.WriteLine("Для выхода из программы введите break.");
+            Console.WriteLine("\nЗадание 1. Дана последовательность, нужно определить, являеться она возрастающей или нет.");
+            Console.WriteLine("\nЗадание 2. Определить достоинство карты по заданному номеру.");
+            Console.WriteLine("\nЗадание 3. Написать программу, которая принимает строку и в соответствии с таблицей выводит значение.");
+            Console.WriteLine("\nЗадание 4. Определить день недели по его порядковому номеру.");
+            Console.WriteLine("\nЗадание 5. Создать массив строк. С помощью foreach обойти его и найти в нём количество заданных элементов.");
             bool flag = true;
             while (flag)
             {
@@ -29,7 +33,7 @@ namespace Tasks
                 {
                     case "1":
                         Console.Write("\nВведите последовательность из 10 чисел (Последовательность должна быть целой, не отрицательной): ");
-                        bool check = int.TryParse(Console.ReadLine(), out int sequence);
+                        bool check = long.TryParse(Console.ReadLine(), out long sequence);
                         if (!check | (sequence >= 10000000000) | (sequence < 1000000000))
                         {
                             Console.WriteLine("Вы не верно ввели данные.");
@@ -42,8 +46,8 @@ namespace Tasks
                         for (int i = 1; i < 10; i++)
                         {
                             sequence /= 10;
-                            number1 = sequence % 10;
-                            number2 = sequence % 100 / 10;
+                            number1 = (int) sequence % 10;
+                            number2 = (int) sequence % 100 / 10;
                             if (number1 < number2)
                             {
                                 last_el_index = 10 - i;
@@ -108,7 +112,7 @@ namespace Tasks
                         }
                         break;
                     case "3":
-                        Console.Write("Введите что-либо из предложенного — Jabroni, School Counselor, Programmer,\nBike Gang Member, Politician, Rapper: ");
+                        Console.Write("Введите что-либо из предложенного — Jabroni, School Counselor, Programmer,\nBike Gang Member, Politician, Rapper или что-то другое: ");
                         string str = Console.ReadLine();
                         str = str.ToLower();
                         switch (str)
